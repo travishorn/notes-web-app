@@ -1,4 +1,6 @@
 <script>
+	import Button from "./Button.svelte";
+
 	export let user;
 </script>
 
@@ -12,11 +14,11 @@
 		{#if user}
 			{user.emailAddress}
 			<form method="post" action="/sign-out">
-				<button class="font-semibold hover:text-gray-600">Sign out</button>
+				<Button>Sign out</Button>
 			</form>
 		{:else}
-			<a class="font-semibold hover:text-gray-600" href="/sign-in">Sign in</a>
-			<a class="font-semibold hover:text-gray-600" href="/sign-up">Sign up</a>
+			<Button href="/sign-in">Sign in</Button>
+			<Button href="/sign-up">Sign up</Button>
 		{/if}
 	</div>
 </header>
