@@ -1,2 +1,17 @@
-<h1 class="text-3xl font-bold underline">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import JournalView from '$lib/components/JournalView.svelte';
+	import LandingPage from '$lib/components/LandingPage.svelte';
+
+	/** @type {import('./$types').PageData} */
+	export let data;
+</script>
+
+<svelte:head>
+	<title>Daily Journal</title>
+</svelte:head>
+
+{#if data.user}
+	<JournalView listEntries={data.listEntries} />
+{:else}
+	<LandingPage />
+{/if}

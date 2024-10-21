@@ -8,11 +8,24 @@ declare global {
 		// interface Platform {}
 
 		interface User {
+			id: string;
 			emailAddress: string;
 		}
 
 		interface Locals {
 			user: User;
+		}
+
+		interface ListEntry {
+			id: string;
+			createdAt: string;
+			contentSnippet: string;
+		}
+
+		interface Entry {
+			id: string;
+			createdAt: date;
+			content: string;
 		}
 	}
 }

@@ -1,6 +1,7 @@
 # Daily Journal
 
-A daily journal web app.
+Capture your thoughts, one day at a time. Build a journaling habit with daily
+prompts and mood tracking.
 
 ## Installation
 

@@ -6,11 +6,7 @@
 	export let data;
 </script>
 
-<svelte:head>
-	<title>Daily Journal</title>
-</svelte:head>
-
-<div class="flex flex-col gap-6 container mx-auto px-8 py-16">
+<div class="flex flex-col gap-6 container mx-auto px-8 pt-16">
 	<Header user={data.user} />
 
 	<main>

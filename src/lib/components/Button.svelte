@@ -1,11 +1,11 @@
 <script>
-  export let href = "";
+	export let href = '';
 
-  const classes = "hover:text-gray-600 font-semibold";
+	const classes = 'hover:text-gray-600 font-semibold';
 </script>
 
 {#if href}
-  <a class={classes} {href}><slot /></a>
+	<a class={classes} {href}><slot /></a>
 {:else}
-  <button class={classes}><slot /></button>
+	<button class={classes}><slot /></button>
 {/if}

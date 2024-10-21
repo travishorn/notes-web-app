@@ -1,7 +1,7 @@
 {
 	"name": "dj",
 	"version": "0.0.1",
-	"description": "A daily journal web app.",
+	"description": "Capture your thoughts, one day at a time. Build a journaling habit with daily prompts and mood tracking.",
 	"private": true,
 	"keywords": [
 		"daily",
@@ -13,15 +13,15 @@
 		"self-reflection"
 	],
 	"author": "Travis Horn <travis@travishorn.com> (https://travishorn.com/)",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/travishorn/dj.git"
-  },
-  "bugs": {
-    "url": "https://github.com/travishorn/dj/issues"
-  },
-  "homepage": "https://github.com/travishorn/dj#readme",
-  "license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/travishorn/dj.git"
+	},
+	"bugs": {
+		"url": "https://github.com/travishorn/dj/issues"
+	},
+	"homepage": "https://github.com/travishorn/dj#readme",
+	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",

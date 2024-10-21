@@ -8,6 +8,7 @@ export async function handle({ event, resolve }) {
 		const users = await db.raw(
 			`
       SELECT
+				u.id,
         u.emailAddress
       FROM
         Session s

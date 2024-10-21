@@ -5,6 +5,10 @@
 	export let form;
 </script>
 
+<svelte:head>
+	<title>Sign In | Daily Journal</title>
+</svelte:head>
+
 <form class="flex flex-col gap-6 max-w-md mx-auto" method="post">
 	{#if form?.error}
 		<div class="bg-red-200 text-red-800 rounded p-2">{form.error}</div>
