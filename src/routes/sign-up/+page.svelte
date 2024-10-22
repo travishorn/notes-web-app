@@ -1,9 +1,23 @@
 <script>
 	import { PUBLIC_SITE_TITLE } from '$env/static/public';
 	import Button from '$lib/components/Button.svelte';
+	import { generateEncryptionKeyMaterial } from '$lib';
 
 	/** @type {import('./$types').ActionData} */
 	export let form;
+
+	let password = 'password';
+
+	/** @type {App.EncryptionKeyMaterial} */
+	let masterEncryptionKeyMaterial;
+
+	$: {
+		generateEncryptionKeyMaterial(password).then(
+			(/** @type {App.EncryptionKeyMaterial} */ generatedKey) => {
+				masterEncryptionKeyMaterial = generatedKey;
+			}
+		);
+	}
 </script>
 
 <svelte:head>
@@ -23,7 +37,7 @@
 			class="border border-gray-300 p-2"
 			type="text"
 			required
-			value={form?.emailAddress ?? ''}
+			value={form?.emailAddress ?? 'user2@example.com'}
 		/>
 	</div>
 
@@ -36,6 +50,7 @@
 			type="password"
 			minlength="8"
 			required
+			bind:value={password}
 		/>
 	</div>
 
@@ -48,8 +63,18 @@
 			type="password"
 			minlength="8"
 			required
+			bind:value={password}
 		/>
 	</div>
+
+	{#if masterEncryptionKeyMaterial}
+		<input type="hidden" name="masterEncryptionKeyIv" value={masterEncryptionKeyMaterial.iv} />
+		<input
+			type="hidden"
+			name="encryptedMasterEncryptionKey"
+			value={masterEncryptionKeyMaterial.encryptedKey}
+		/>
+	{/if}
 
 	<div>
 		<Button>Sign up</Button>

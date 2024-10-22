@@ -7,6 +7,11 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 
+		interface EncryptionKeyMaterial {
+			iv: string;
+			encryptedKey: string;
+		}
+
 		interface User {
 			id: string;
 			emailAddress: string;
