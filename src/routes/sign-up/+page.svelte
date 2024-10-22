@@ -2,19 +2,23 @@
 	import { PUBLIC_SITE_TITLE } from '$env/static/public';
 	import Button from '$lib/components/Button.svelte';
 	import { generateEncryptionKeyMaterial } from '$lib';
+	import { masterEncryptionKey } from '../../stores.js';
 
 	/** @type {import('./$types').ActionData} */
 	export let form;
 
-	let password = 'password';
+	let password = '';
 
 	/** @type {App.EncryptionKeyMaterial} */
 	let masterEncryptionKeyMaterial;
 
 	$: {
 		generateEncryptionKeyMaterial(password).then(
-			(/** @type {App.EncryptionKeyMaterial} */ generatedKey) => {
-				masterEncryptionKeyMaterial = generatedKey;
+			(/** @type {App.EncryptionKeyMaterial|null} */ generatedKeyMaterial) => {
+				if (generatedKeyMaterial) {
+					masterEncryptionKeyMaterial = generatedKeyMaterial;
+					masterEncryptionKey.set(generatedKeyMaterial.key);
+				}
 			}
 		);
 	}
@@ -37,7 +41,7 @@
 			class="border border-gray-300 p-2"
 			type="text"
 			required
-			value={form?.emailAddress ?? 'user2@example.com'}
+			value={form?.emailAddress ?? ''}
 		/>
 	</div>
 

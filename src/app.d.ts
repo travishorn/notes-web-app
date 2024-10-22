@@ -10,6 +10,7 @@ declare global {
 		interface EncryptionKeyMaterial {
 			iv: string;
 			encryptedKey: string;
+			key: CryptoKey;
 		}
 
 		interface User {

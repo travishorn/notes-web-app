@@ -16,10 +16,10 @@ function arrayBufferToBase64(buffer) {
 
 /**
  * @param {string} password
- * @returns {Promise<App.EncryptionKeyMaterial>}
+ * @returns {Promise<App.EncryptionKeyMaterial|null>}
  */
 export async function generateEncryptionKeyMaterial(password) {
-	if (!browser) return { iv: '', encryptedKey: '' };
+	if (!browser) return null;
 
 	const masterEncryptionKey = window.crypto.getRandomValues(new Uint8Array(32));
 	const masterEncryptionKeyIv = window.crypto.getRandomValues(new Uint8Array(12));
@@ -54,6 +54,7 @@ export async function generateEncryptionKeyMaterial(password) {
 
 	return {
 		iv: arrayBufferToBase64(masterEncryptionKeyIv),
-		encryptedKey: arrayBufferToBase64(encryptedMasterEncryptionKey)
+		encryptedKey: arrayBufferToBase64(encryptedMasterEncryptionKey),
+		key: passwordDerivedKey
 	};
 }
