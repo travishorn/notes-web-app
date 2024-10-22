@@ -1,27 +1,16 @@
 <script>
 	import { PUBLIC_SITE_TITLE } from '$env/static/public';
 	import Button from '$lib/components/Button.svelte';
-	import Dashboard from '$lib/components/Dashboard.svelte';
-	import LandingPage from '$lib/components/LandingPage.svelte';
-	import PencilIcon from '$lib/icons/PencilIcon.svelte';
-
-	/** @type {import('./$types').PageData} */
-	export let data;
 </script>
 
 <svelte:head>
 	<title>{PUBLIC_SITE_TITLE}</title>
 </svelte:head>
 
-{#if data.user}
-	<Dashboard listNotes={data.listNotes}>
-		<Button href="/note/new">
-			<div class="flex items-center gap-1">
-				<PencilIcon class="w-5 h-5" />
-				Create a new note
-			</div>
-		</Button>
-	</Dashboard>
-{:else}
-	<LandingPage />
-{/if}
+<div class="flex flex-col gap-6 py-20 text-center">
+	<p class="text-6xl font-bold tracking-tighter">Capture Your Thoughts, One Note at a Time</p>
+
+	<p class="text-xl text-gray-700">Build good habits, stay organized, and remember what matters</p>
+
+	<Button href="/sign-up">Get Started</Button>
+</div>

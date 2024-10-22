@@ -1,7 +1,7 @@
 {
 	"name": "my-notes",
 	"version": "0.0.1",
-	"description": "Capture your thoughts, one note at a time. Build a good habit, stay organized, and remember what matters.",
+	"description": "Capture your thoughts, one note at a time. Build good habits, stay organized, and remember what matters.",
 	"private": true,
 	"keywords": [
 		"daily",

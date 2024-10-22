@@ -1,6 +1,6 @@
 # My Notes
 
-Capture your thoughts, one note at a time. Build a good habit, stay organized,
+Capture your thoughts, one note at a time. Build good habits, stay organized,
 and remember what matters.
 
 ## Installation
