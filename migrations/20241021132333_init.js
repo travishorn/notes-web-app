@@ -24,7 +24,8 @@ export async function up(knex) {
     CREATE TABLE Note (
       id TEXT PRIMARY KEY,
       userId TEXT NOT NULL,
-      createdAt TEXT NOT NULL,
+      createdAt TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updatedAt TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
       title TEXT NOT NULL,
       content TEXT,
       FOREIGN KEY (userId) REFERENCES User(id)

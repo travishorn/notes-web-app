@@ -18,7 +18,7 @@ export async function load({ locals }) {
 		WHERE
 			n.userId = :userId
 		ORDER BY
-			n.createdAt DESC;
+			n.updatedAt DESC;
 	`,
 		{ userId: locals.user.id }
 	);
