@@ -25,8 +25,16 @@ export async function up(knex) {
       id TEXT PRIMARY KEY,
       userId TEXT NOT NULL,
       createdAt TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      prompt TEXT,
       content TEXT,
       FOREIGN KEY (userId) REFERENCES User(id)
+    );
+  `);
+
+	await knex.raw(`
+    CREATE TABLE Prompt (
+      id TEXT PRIMARY KEY,
+      content TEXT
     );
   `);
 }
@@ -36,6 +44,8 @@ export async function up(knex) {
  * @returns { Promise<void> }
  */
 export async function down(knex) {
+	await knex.raw(`DROP TABLE DailyPrompt;`);
+	await knex.raw(`DROP TABLE Prompt;`);
 	await knex.raw(`DROP TABLE Entry;`);
 	await knex.raw(`DROP TABLE Session;`);
 	await knex.raw(`DROP TABLE User;`);

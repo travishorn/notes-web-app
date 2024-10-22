@@ -1,4 +1,6 @@
 <script>
+	import Button from './Button.svelte';
+
 	export let listEntries;
 
 	/** @type {App.Entry|null} */
@@ -12,7 +14,7 @@
 			{#each listEntries as listEntry}
 				<a class="px-2 py-3 hover:bg-gray-100" href={`/entry/${listEntry.id}`}>
 					<div class="font-semibold">{listEntry.createdAt.toLocaleDateString()}</div>
-					<div class="text-sm text-gray-500 truncate">{listEntry.contentSnippet}</div>
+					<div class="text-sm text-gray-500 truncate">{listEntry.contentSnippet ?? ''}</div>
 				</a>
 			{/each}
 		</div>
@@ -24,7 +26,12 @@
 			<h2 class="text-3xl font-bold mb-4">{entry.createdAt.toLocaleDateString()}</h2>
 			<p class="whitespace-pre-wrap">{entry.content}</p>
 		{:else}
-			No entry.
+			<div class="flex gap-2">
+				Ready for today's entry?
+				<form method="post" action="/entry/new">
+					<Button>Start writing!</Button>
+				</form>
+			</div>
 		{/if}
 	</article>
 </div>

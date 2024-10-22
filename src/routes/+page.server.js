@@ -1,4 +1,5 @@
 import db from '$lib/server/db.js';
+import { redirect } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ locals }) {
@@ -25,6 +26,13 @@ export async function load({ locals }) {
 				createdAt: new Date(entry.createdAt)
 			};
 		});
+
+		const now = new Date().toISOString().slice(0, 10);
+		const latest = listEntries[0].createdAt.toISOString().slice(0, 10);
+
+		if (now === latest) {
+			redirect(303, `/entry/${listEntries[0].id}`);
+		}
 
 		return { listEntries };
 	}

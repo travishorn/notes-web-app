@@ -1,4 +1,5 @@
 <script>
+	import BookOpenIcon from '$lib/icons/BookOpenIcon.svelte';
 	import Button from './Button.svelte';
 
 	export let user;
@@ -6,7 +7,7 @@
 
 <header class="flex justify-between">
 	<a class="flex gap-1 items-center font-semibold hover:text-gray-600" href="/">
-		<img alt="Logo, an open boo" src="/book-open.svg" class="w-5 h-5" />
+		<BookOpenIcon class="w-5 h-5" />
 		Daily Journal
 	</a>
 
