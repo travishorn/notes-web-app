@@ -14,7 +14,7 @@
 
 	beforeNavigate(({ cancel }) => {
 		if (dirty && !isExplicitlyLeaving) {
-			if (confirm('You have unsaved changes. Leave this note?')) {
+			if (confirm('You have unsaved changes. Discard changes and leave this note?')) {
 				dirty = false;
 				isExplicitlyLeaving = false;
 			} else {
