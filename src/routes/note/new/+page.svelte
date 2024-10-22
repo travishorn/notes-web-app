@@ -1,16 +1,13 @@
 <script>
 	import { PUBLIC_SITE_TITLE } from '$env/static/public';
 	import Dashboard from '$lib/components/Dashboard.svelte';
-	import Note from '$lib/components/Note.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
 </script>
 
 <svelte:head>
-	<title>{data.note.title} | {PUBLIC_SITE_TITLE}</title>
+	<title>New Note | {PUBLIC_SITE_TITLE}</title>
 </svelte:head>
 
-<Dashboard listNotes={data.listNotes}>
-	<Note note={data.note} />
-</Dashboard>
+<Dashboard listNotes={data.listNotes}>(New note form goes here.)</Dashboard>

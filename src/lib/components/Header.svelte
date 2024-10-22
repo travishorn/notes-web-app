@@ -8,7 +8,7 @@
 
 <header class="flex justify-between">
 	<a class="flex gap-1 items-center font-semibold hover:text-gray-600" href="/">
-		<BookOpenIcon class="w-5 h-5" />
+		<BookOpenIcon class="w-6 h-6" />
 		{PUBLIC_SITE_TITLE}
 	</a>
 

@@ -1,10 +1,5 @@
 <script>
-	import Button from './Button.svelte';
-
 	export let listNotes;
-
-	/** @type {App.Note|null} */
-	export let note = null;
 </script>
 
 <div class="flex h-full">
@@ -21,16 +16,7 @@
 	</aside>
 
 	<!-- Content -->
-	<article class="p-8 overflow-y-auto h[calc(100vh-115px)]">
-		{#if note}
-			<h2 class="text-3xl font-bold mb-4">{note.title}</h2>
-			<p class="whitespace-pre-wrap">{note.content}</p>
-		{:else}
-			<div class="flex gap-2">
-				<form method="post" action="/note/new">
-					<Button>Create a new note</Button>
-				</form>
-			</div>
-		{/if}
-	</article>
+	<div class="p-8 overflow-y-auto h[calc(100vh-115px)]">
+		<slot />
+	</div>
 </div>
