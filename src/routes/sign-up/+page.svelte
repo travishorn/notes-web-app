@@ -1,4 +1,5 @@
 <script>
+	import { PUBLIC_SITE_TITLE } from '$env/static/public';
 	import Button from '$lib/components/Button.svelte';
 
 	/** @type {import('./$types').ActionData} */
@@ -6,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Sign Up | Daily Journal</title>
+	<title>Sign Up | {PUBLIC_SITE_TITLE}</title>
 </svelte:head>
 
 <form class="flex flex-col gap-6 max-w-md mx-auto" method="post">

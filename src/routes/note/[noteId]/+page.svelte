@@ -1,18 +1,13 @@
 <script>
 	import { PUBLIC_SITE_TITLE } from '$env/static/public';
 	import NoteView from '$lib/components/NoteView.svelte';
-	import LandingPage from '$lib/components/LandingPage.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
 </script>
 
 <svelte:head>
-	<title>{PUBLIC_SITE_TITLE}</title>
+	<title>{data.note.title} | {PUBLIC_SITE_TITLE}</title>
 </svelte:head>
 
-{#if data.user}
-	<NoteView listNotes={data.listNotes} />
-{:else}
-	<LandingPage />
-{/if}
+<NoteView listNotes={data.listNotes} note={data.note} />

@@ -16,15 +16,15 @@ declare global {
 			user: User;
 		}
 
-		interface ListEntry {
+		interface ListNote {
 			id: string;
-			createdAt: string;
+			title: string;
 			contentSnippet: string;
 		}
 
-		interface Entry {
+		interface Note {
 			id: string;
-			createdAt: date;
+			title: string;
 			content: string;
 		}
 	}

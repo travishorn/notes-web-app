@@ -1,7 +1,7 @@
 {
-	"name": "dj",
+	"name": "my-notes",
 	"version": "0.0.1",
-	"description": "Capture your thoughts, one day at a time. Build a journaling habit with daily prompts and mood tracking.",
+	"description": "Capture your thoughts, one note at a time. Build a good habit, stay organized, and remember what matters.",
 	"private": true,
 	"keywords": [
 		"daily",
@@ -15,12 +15,12 @@
 	"author": "Travis Horn <travis@travishorn.com> (https://travishorn.com/)",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/travishorn/dj.git"
+		"url": "git+https://github.com/travishorn/my-notes.git"
 	},
 	"bugs": {
-		"url": "https://github.com/travishorn/dj/issues"
+		"url": "https://github.com/travishorn/my-notes/issues"
 	},
-	"homepage": "https://github.com/travishorn/dj#readme",
+	"homepage": "https://github.com/travishorn/my-notes#readme",
 	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",

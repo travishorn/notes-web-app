@@ -1,7 +1,7 @@
-# Daily Journal
+# My Notes
 
-Capture your thoughts, one day at a time. Build a journaling habit with daily
-prompts and mood tracking.
+Capture your thoughts, one note at a time. Build a good habit, stay organized,
+and remember what matters.
 
 ## Installation
 
@@ -10,19 +10,25 @@ Make sure you have git and Node.js installed.
 Clone this repository.
 
 ```sh
-git clone https://github.com/travishorn/dj
+git clone https://github.com/travishorn/my-notes
 ```
 
 Change into the directory.
 
 ```sh
-cd dj
+cd my-notes
 ```
 
 Install the dependencies.
 
 ```sh
 npm install
+```
+
+Copy the example environment variables file.
+
+```sh
+cp .env.example .env
 ```
 
 Run the database migrations.
