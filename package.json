@@ -1,5 +1,5 @@
 {
-	"name": "my-notes",
+	"name": "notes-web-app",
 	"version": "0.0.1",
 	"description": "Capture your thoughts, one note at a time. Build good habits, stay organized, and remember what matters.",
 	"private": true,
@@ -15,12 +15,12 @@
 	"author": "Travis Horn <travis@travishorn.com> (https://travishorn.com/)",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/travishorn/my-notes.git"
+		"url": "git+https://github.com/travishorn/notes-web-app.git"
 	},
 	"bugs": {
-		"url": "https://github.com/travishorn/my-notes/issues"
+		"url": "https://github.com/travishorn/notes-web-app/issues"
 	},
-	"homepage": "https://github.com/travishorn/my-notes#readme",
+	"homepage": "https://github.com/travishorn/notes-web-app#readme",
 	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",

@@ -1,4 +1,4 @@
-# My Notes
+# Notes Web App
 
 Capture your thoughts, one note at a time. Build good habits, stay organized,
 and remember what matters.
