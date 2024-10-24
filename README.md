@@ -51,7 +51,11 @@ Start the development server.
 npm run dev
 ```
 
-Go to http://localhost:5173 in your browser to see the running app.
+Go to http://localhost:5173 in your browser to see the running app. You can sign
+in with the sample user and/or sign up a new account.
+
+Sample user email: user@example.com  
+Sample user password: password
 
 ## Deployment
 

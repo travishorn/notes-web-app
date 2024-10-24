@@ -12,15 +12,11 @@ export async function seed(knex) {
     INSERT INTO User (
       id,
       emailAddress,
-      passwordHash,
-      masterEncryptionKeyIv,
-      encryptedMasterEncryptionKey
+      passwordHash
     ) VALUES (
       '7918fdaf-5a64-4e5f-9e9a-a1e96d64058f',
       'user@example.com',
-      '$argon2id$v=19$m=65536,t=3,p=4$bzD4gKIcMOkzwijViw8qSg$mQuBvS9sIQ7PnI3DJwtr1kJ4ei6XGuM9q9qx5aII3Gs',
-      '4ViBr9V8vQ1c+R16',
-      'WAxIwVKbC/EmgfFkffiP82D+Ehqg5CaJHm/Mt6Jl4Dvrfs1QRz7vB5xEgBtcAOO0'
+      '$argon2id$v=19$m=65536,t=3,p=4$bzD4gKIcMOkzwijViw8qSg$mQuBvS9sIQ7PnI3DJwtr1kJ4ei6XGuM9q9qx5aII3Gs'
     );
   `);
 

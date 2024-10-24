@@ -7,9 +7,7 @@ export async function up(knex) {
     CREATE TABLE User (
       id TEXT PRIMARY KEY,
       emailAddress TEXT NOT NULL UNIQUE,
-      passwordHash TEXT NOT NULL,
-      encryptedMasterEncryptionKey TEXT NOT NULL,
-      masterEncryptionKeyIv TEXT NOT NULL
+      passwordHash TEXT NOT NULL
     );
   `);
 

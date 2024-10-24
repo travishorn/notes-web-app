@@ -17,8 +17,6 @@ export const actions = {
 		const emailAddress = String(data.get('emailAddress'));
 		const password = String(data.get('password'));
 		const retypePassword = String(data.get('retypePassword'));
-		const masterEncryptionKeyIv = String(data.get('masterEncryptionKeyIv'));
-		const encryptedMasterEncryptionKey = String(data.get('encryptedMasterEncryptionKey'));
 
 		const users = await db.raw(
 			`
@@ -69,23 +67,17 @@ export const actions = {
 			INSERT INTO User (
 				id,
 				emailAddress,
-				passwordHash,
-				masterEncryptionKeyIv,
-				encryptedMasterEncryptionKey
+				passwordHash
 			) VALUES (
 				:userId,
 				:emailAddress,
-				:passwordHash,
-				:masterEncryptionKeyIv,
-				:encryptedMasterEncryptionKey
+				:passwordHash
 			)
 		`,
 			{
 				userId,
 				emailAddress,
-				passwordHash,
-				masterEncryptionKeyIv,
-				encryptedMasterEncryptionKey
+				passwordHash
 			}
 		);
 
